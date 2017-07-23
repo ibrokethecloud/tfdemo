@@ -46,3 +46,5 @@ instance_type - Instance size
 env_desc - Small description for environment for usage within Rancher
 
 To scale up / down and environment please change the count variable in ENV definition file and run the **setupinfra** target
+
+At the end of the **setupinfra** target the build will output the aws ec2 elb dns record for use later to test the application.

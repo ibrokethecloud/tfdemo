@@ -39,10 +39,10 @@ setupenv:
 	@sh scripts/setupenv.sh
 
 setupinfra:	checkvariables
-	@cd infrastructure && terraform apply -var-file="env/${ENV}.tfvars" -var RANCHER_URL=${RANCHER_URL} -var RANCHER_ACCESS_KEY=${RANCHER_ACCESS_KEY} -var RANCHER_SECRET_KEY=${RANCHER_SECRET_KEY} -var env=${ENV}
+	@cd infrastructure && terraform apply -state=tf-${ENV}.tfstate -var-file="env/${ENV}.tfvars" -var RANCHER_URL=${RANCHER_URL} -var RANCHER_ACCESS_KEY=${RANCHER_ACCESS_KEY} -var RANCHER_SECRET_KEY=${RANCHER_SECRET_KEY} -var env=${ENV}
 
 destroyinfra:	checkvariables
-	@cd infrastructure && terraform destroy -var-file="env/${ENV}.tfvars" -var RANCHER_URL=${RANCHER_URL} -var RANCHER_ACCESS_KEY=${RANCHER_ACCESS_KEY} -var RANCHER_SECRET_KEY=${RANCHER_SECRET_KEY} -var env=${ENV}
+	@cd infrastructure && terraform destroy -state=tf-${ENV}.tfstate -var-file="env/${ENV}.tfvars" -var RANCHER_URL=${RANCHER_URL} -var RANCHER_ACCESS_KEY=${RANCHER_ACCESS_KEY} -var RANCHER_SECRET_KEY=${RANCHER_SECRET_KEY} -var env=${ENV}
 
 deployweb:
 ifndef VERSION
