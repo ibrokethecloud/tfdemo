@@ -33,12 +33,12 @@ The lb and app can be deployed in any order.
 This target checks that certain variables referred in the TF build are set.
 Following are the mandatory variables:
 
-  AWS_ACCESS_KEY_ID - AWS ACCESS KEY for your AWS ROOT/IAM Account.
-  AWS_SECRET_ACCESS_KEY - AWS SECRET KEY for your AWS ROOT/IAM Account.
-  RANCHER_URL - RANCHER server url where the new environment needs to be created and hosts will register to.
-  RANCHER_ACCESS_KEY - Account API access key
-  RANCHER_SECRET_KEY - Account API secret key
-  ENV - Environment definition file available under infrastructure/env
+  AWS_ACCESS_KEY_ID - AWS ACCESS KEY for your AWS ROOT/IAM Account.  
+  AWS_SECRET_ACCESS_KEY - AWS SECRET KEY for your AWS ROOT/IAM Account.  
+  RANCHER_URL - RANCHER server url where the new environment needs to be created and hosts will register to.  
+  RANCHER_ACCESS_KEY - Account API access key  
+  RANCHER_SECRET_KEY - Account API secret key  
+  ENV - Environment definition file available under infrastructure/env  
 
 **The ENV file needs the following mandatory variables:**
 count - Number of instances to be created.
