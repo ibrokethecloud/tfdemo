@@ -7,7 +7,7 @@ read ENV_ACCESS_KEY ENV_SECRET_KEY ACTIONS_DEACTIVATE ACTIONS_REMOVE <<< $(curl 
   export ENV_ACCESS_KEY ENV_SECRET_KEY ACTIONS_DEACTIVATE ACTIONS_REMOVE
 
 ## Now that all settings are available use RANCHER_COMPOSE to deploy stack ##
-rancher-compose -p ${SERVICE} --url ${RANCHER_URL} --access-key ${ENV_ACCESS_KEY} --secret-key ${ENV_SECRET_KEY} -f ./deployment/${SERVICE}/docker-compose.yml -r ./application/deployment/${SERVICE}/rancher-compose.yml up --force-upgrade -c -p -d
+rancher-compose -p ${SERVICE} --url ${RANCHER_URL} --access-key ${ENV_ACCESS_KEY} --secret-key ${ENV_SECRET_KEY} -f ./deployment/${SERVICE}/docker-compose.yml -r ./deployment/${SERVICE}/rancher-compose.yml up --force-upgrade -c -p -d
 
 ## Remove temporary key pair now that deployment is complete ##
 echo "removing temp keys"
