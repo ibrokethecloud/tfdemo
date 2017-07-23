@@ -1,4 +1,4 @@
-#TF DEMO
+# TF DEMO
 Sample repo to spin up an environment using RANCHER and EC2 (pseudo PAAS)
 
 Please use the makefile available to spin up the infra and deploy the app. I have added 2 demo applications, a web app and lb to route to it.
