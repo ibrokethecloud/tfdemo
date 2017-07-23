@@ -22,6 +22,7 @@ Will destroy the EC2 instances, ELB and Rancher environment
 ### deployweb ###
 Will deploy the sample web application. The service is scheduled globally so will scale out as and when the hosts are added / removed to the environment.
 As we use the label selector based route discover, the rancher lb will detect the changes and adjust routing accordingly.
+This target needs an environment variable VERSION to identify what version of dummy web-app to deploy. Currently only 2 image builds are available. VERSION=1 and VERSION=2.
 
 ### deploylb ###
 Deploys a software lb to route to the web app container deployed by the **deployweb** target.
