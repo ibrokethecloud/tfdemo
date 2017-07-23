@@ -1,0 +1,10 @@
+version: '2'
+services:
+  lb:
+    image: rancher/lb-service-haproxy
+    restart: always
+    ports:
+      - 80:80
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global:  true

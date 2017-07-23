@@ -1,0 +1,13 @@
+version: '2'
+services:
+  web-app:
+    upgrade_strategy:
+      start_first:  true
+    health_check:
+      port: 80
+      interval: 30000
+      initializing_timeout: 30000
+      unhealthy_threshold:  1
+      strategy: recreate
+      healthy_threshold:  1
+      response_timeout: 10000

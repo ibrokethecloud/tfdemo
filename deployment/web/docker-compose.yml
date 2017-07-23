@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web-app:
+    image: gmehta3/web-demo:${VERSION}
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global:  true
+      demo.lb.target: web-app.web-demo
