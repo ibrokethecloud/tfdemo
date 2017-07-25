@@ -35,7 +35,7 @@ curl -kL ${TF_URL} -o ./bin/terraform.zip
 STATE=$(( ${STATE} + $# ))
 curl -kL ${RC_URL} -o ./bin/rancher-compose.tar.gz
 STATE=$(( ${STATE} + $# ))
-unzip ./bin/terraform.zip
+unzip ./bin/terraform.zip -d ./bin/
 tar -xf ./bin/rancher-compose.tar.gz -C ./bin/ --strip=2
 chmod -R +x ./bin/
 
