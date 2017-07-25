@@ -6,7 +6,10 @@ if [ ! -x "$(command -v tar)" ]
 then
   exit 1
 fi
-
+if [ ! -x "$(command -v unzip)" ]
+then
+  exit 1
+fi
 
 OS=$(uname)
 STATE=0
@@ -32,7 +35,7 @@ curl -kL ${TF_URL} -o ./bin/terraform.zip
 STATE=$(( ${STATE} + $# ))
 curl -kL ${RC_URL} -o ./bin/rancher-compose.tar.gz
 STATE=$(( ${STATE} + $# ))
-tar -xf ./bin/terraform.zip -C ./bin/
+unzip ./bin/terraform.zip
 tar -xf ./bin/rancher-compose.tar.gz -C ./bin/ --strip=2
 chmod -R +x ./bin/
 
