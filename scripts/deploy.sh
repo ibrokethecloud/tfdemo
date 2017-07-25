@@ -1,5 +1,12 @@
 #!/bin/sh
 # deployment wrapper to create a temp key pair and deploy the stack #
+echo "Checking if basic packages are present"
+if [ ! -x "$(command -v jq)" ]
+then
+  echo "Please install jq on your host to allow this script to work"
+  exit 1
+fi
+
 SERVICE=$1
 #Create a temp key pair to deploy #
 API_URL=$(curl -s -u ${RANCHER_ACCESS_KEY}:${RANCHER_SECRET_KEY} "${RANCHER_URL}/v1/projects" | jq -r --arg env "${ENV}" '.data[] | select (.name==$env) | .links.apiKeys')
