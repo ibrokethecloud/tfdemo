@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bsh
 # deployment wrapper to create a temp key pair and deploy the stack #
 echo "Checking if basic packages are present"
 if [ ! -x "$(command -v jq)" ]
